@@ -1,0 +1,6 @@
+{
+  "name": "AURA Studio",
+  "description": "An immersive digital agency web experience featuring fluid WebGL liquid shaders, scroll velocity typography skew, smooth Lenis scrolling, dynamic audio snaps, and horizontal pinned case studies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
