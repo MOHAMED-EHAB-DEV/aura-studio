@@ -5,9 +5,6 @@
   "type": "module",
   "author": "Mohamed Ehab",
   "license": "SEE LICENSE IN LICENSE",
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
