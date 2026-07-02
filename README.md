@@ -1,5 +1,4 @@
 # AURA Studio // Premium Creative Digital Agency Template
-[![Preview Badge](https://img.shields.io/badge/Preview-Live%20Demo-orange)](https://aura-studio-beige.vercel.app/)
 
 ## ✨ Overview
 AURA Studio is a state-of-the-art creative agency template designed for digital studios, freelancers, and premium portfolios. It delivers an unforgettable interactive experience combining WebGL graphics, tactile sound design, and ultra-smooth animations. This template is fully optimized for speed, SEO, and professional client delivery.
@@ -64,7 +63,7 @@ src/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (>= 18.0.0)
+- Node.js
 - npm or yarn
 
 ### Installation
