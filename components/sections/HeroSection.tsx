@@ -6,7 +6,7 @@ import { MagneticButton } from "../motion/MagneticButton";
 import { SplitText } from "../motion/SplitText";
 import { motion, AnimatePresence } from "motion/react";
 
-const LiquidShaderCanvas = dynamic(() => import("../three/LiquidShaderCanvas").then(m => m.LiquidShaderCanvas), { ssr: false });
+const LiquidShaderCanvas = dynamic(() => import("../three/LiquidShaderCanvas").then(m => m.LiquidShaderCanvas));
 
 export const HeroSection: React.FC = () => {
   const [showReel, setShowReel] = useState(false);
@@ -61,7 +61,7 @@ export const HeroSection: React.FC = () => {
             {/* Scroll indicator */}
             <div className="hidden md:flex flex-col items-start font-mono text-[10px] tracking-widest text-brand-muted/80">
               <span>SCROLL_TO_DISCOVER</span>
-              <div className="mt-2 h-16 w-[1px] bg-brand-border/40 relative overflow-hidden">
+              <div className="mt-2 h-16 w-px bg-brand-border/40 relative overflow-hidden">
                 <motion.div
                   animate={{ y: ["-100%", "100%"] }}
                   transition={{ repeat: Infinity, duration: 1.8, ease: "linear" }}

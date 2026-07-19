@@ -60,10 +60,9 @@ const ShaderPlane: React.FC<{ mouseRef: React.MutableRefObject<[number, number]>
     uMouse: { value: new THREE.Vector2(0.5, 0.5) },
   });
 
-  useFrame((state) => {
-    const { clock } = state;
+  useFrame((state, delta) => {
     // Update elapsed time uniform
-    uniforms.current.uTime.value = clock.getElapsedTime();
+    uniforms.current.uTime.value += delta;
     
     // Smoothly interpolate the mouse uniform for liquid inertia
     uniforms.current.uMouse.value.x += (mouseRef.current[0] - uniforms.current.uMouse.value.x) * 0.08;
@@ -129,7 +128,7 @@ export const LiquidShaderCanvas: React.FC = () => {
           background: "radial-gradient(circle at 50% 50%, rgba(255, 69, 0, 0.15) 0%, rgba(5, 5, 5, 0) 70%)",
         }}
       >
-        <div className="absolute inset-0 animate-pulse bg-gradient-to-tr from-brand-bg via-[#120024] to-brand-bg opacity-80" />
+        <div className="absolute inset-0 animate-pulse bg-linear-to-tr from-brand-bg via-[#120024] to-brand-bg opacity-80" />
       </div>
     );
   }

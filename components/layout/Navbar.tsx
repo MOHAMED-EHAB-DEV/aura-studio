@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
             className="group flex items-center space-x-2.5 focus:outline-none pointer-events-auto"
             aria-label="AURA Studio Home"
           >
-            <div className="w-2.5 h-2.5 bg-brand-primary rounded-full group-hover:scale-125 transition-transform duration-300 flex-shrink-0" />
+            <div className="w-2.5 h-2.5 bg-brand-primary rounded-full group-hover:scale-125 transition-transform duration-300 shrink-0" />
             <div className="flex flex-col items-start">
               <span className="font-display text-2xl font-black tracking-tighter text-brand-text group-hover:text-brand-primary transition-colors leading-none">
                 AURA

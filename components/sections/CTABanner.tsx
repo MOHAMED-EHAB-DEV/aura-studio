@@ -7,7 +7,7 @@ export const CTABanner: React.FC = () => {
   return (
     <section className="relative w-full bg-[#030303] py-24 md:py-40 px-6 overflow-hidden border-t border-brand-border/10">
       {/* Intense Glowing Radial Background Accent */}
-      <div className="absolute -bottom-1/2 left-1/2 -translate-x-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-brand-primary/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute -bottom-1/2 left-1/2 -translate-x-1/2 w-[80vw] h-[80vw] max-w-200 max-h-200 bg-brand-primary/10 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Decorative Grid Lines */}
       <div className="pointer-events-none absolute inset-y-0 left-12 right-12 z-0 grid grid-cols-4 opacity-5">
@@ -24,7 +24,7 @@ export const CTABanner: React.FC = () => {
         {/* Screen-Filling Headline */}
         <h2 className="font-display text-[7.5vw] md:text-[5.5vw] font-black leading-[0.95] tracking-tighter text-brand-text mb-12 uppercase select-none">
           HAVE A VISION?<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-[#FF7300]">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-[#FF7300]">
             LET'S TALK.
           </span>
         </h2>

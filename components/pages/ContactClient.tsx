@@ -247,7 +247,7 @@ export const ContactClient: React.FC = () => {
             transition={{ type: "spring", damping: 18, stiffness: 120 }}
             className="fixed bottom-8 right-6 md:right-12 z-50 flex max-w-md items-center space-x-4 rounded-2xl border border-brand-primary/30 bg-brand-surface p-5 shadow-2xl backdrop-blur-md"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary/15 text-brand-primary flex-shrink-0">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary/15 text-brand-primary shrink-0">
               <CheckCircle2 size={20} />
             </div>
             <div className="text-left font-sans">

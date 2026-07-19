@@ -8,7 +8,7 @@ export const Testimonials: React.FC = () => {
   return (
     <section className="relative w-full bg-brand-bg px-6 py-20 md:px-12 md:py-32 overflow-hidden">
       {/* Decorative background grid line */}
-      <div className="absolute top-0 left-1/3 w-[1px] h-full bg-brand-border/10 pointer-events-none" />
+      <div className="absolute top-0 left-1/3 w-px h-full bg-brand-border/10 pointer-events-none" />
 
       <div className="mx-auto max-w-7xl relative z-10">
         

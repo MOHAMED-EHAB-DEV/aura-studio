@@ -10,8 +10,8 @@ export const ClientMarquee: React.FC = () => {
   return (
     <section className="relative w-full bg-[#030303] py-16 md:py-24 overflow-hidden border-y border-brand-border/20">
       {/* Absolute Vignette Overlay for Premium Edge Fading */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 md:w-48 bg-gradient-to-r from-brand-bg to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 md:w-48 bg-gradient-to-l from-brand-bg to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 md:w-48 bg-linear-to-r from-brand-bg to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 md:w-48 bg-linear-to-l from-brand-bg to-transparent" />
 
       {/* Row 1: Leftward infinite scroll */}
       <div className="flex w-full overflow-hidden mb-6 md:mb-10">

@@ -66,9 +66,8 @@ const ShaderImagePlane: React.FC<ShaderImagePlaneProps> = ({ texture, hoverCoord
     uTime: { value: 0 },
   });
 
-  useFrame((state) => {
-    const { clock } = state;
-    uniforms.current.uTime.value = clock.getElapsedTime();
+  useFrame((state, delta) => {
+    uniforms.current.uTime.value += delta;
     
     // Interpolate hover state for smooth transitions
     const targetHover = isHovered ? 1.0 : 0.0;

@@ -3,7 +3,7 @@ import { useReducedMotion } from "motion/react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
-const DistortionCanvas = dynamic(() => import("./DistortionCanvas"), { ssr: false });
+const DistortionCanvas = dynamic(() => import("./DistortionCanvas"));
 
 interface DistortionImageProps {
   src: string;

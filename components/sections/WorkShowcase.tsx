@@ -92,7 +92,7 @@ export const WorkShowcase: React.FC = () => {
         {projects.map((project, index) => (
           <section
             key={project.id}
-            className="showcase-panel flex-shrink-0 h-screen w-full md:w-screen flex flex-col justify-center px-6 py-20 md:px-16 md:py-12 border-b md:border-b-0 md:border-r border-brand-border/20 relative"
+            className="showcase-panel shrink-0 h-screen w-full md:w-screen flex flex-col justify-center px-6 py-20 md:px-16 md:py-12 border-b md:border-b-0 md:border-r border-brand-border/20 relative"
           >
             {/* Grid background visual */}
             <div className="pointer-events-none absolute inset-0 z-0 grid grid-cols-4 opacity-5">
@@ -152,7 +152,7 @@ export const WorkShowcase: React.FC = () => {
                 </div>
 
                 {/* CTA Link */}
-                <div>
+                <Link href={`/work/${project.id}`}>
                   <MagneticButton
                     className="group inline-flex items-center space-x-3 rounded-full border border-brand-text bg-brand-surface px-6 py-3 font-mono text-xs font-bold tracking-widest text-brand-text hover:bg-brand-text hover:text-brand-bg transition-all duration-300"
                     id={`view-project-btn-${project.id}`}
@@ -160,7 +160,7 @@ export const WorkShowcase: React.FC = () => {
                     <span>EXPLORE_CASE</span>
                     <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </MagneticButton>
-                </div>
+                </Link>
               </div>
 
             </div>

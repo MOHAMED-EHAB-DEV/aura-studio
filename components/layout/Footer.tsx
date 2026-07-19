@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="relative w-full border-t border-brand-border bg-brand-bg px-6 py-12 md:px-12 md:py-20 text-brand-text overflow-hidden">
       {/* Decorative Grid Line */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-primary/20 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-brand-primary/20 to-transparent" />
 
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6 mb-16">
@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
                   >
                     <span className="relative pb-0.5">
                       {social.name}
-                      <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-brand-primary transition-all duration-300 group-hover:w-full" />
+                      <span className="absolute bottom-0 left-0 w-0 h-px bg-brand-primary transition-all duration-300 group-hover:w-full" />
                     </span>
                     <ArrowUpRight size={12} className="ml-1 opacity-0 -translate-y-0.5 group-hover:opacity-100 transition-all duration-300" />
                   </a>

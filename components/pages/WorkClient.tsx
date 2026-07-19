@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
 import { projects } from "@/data/agencyData";
 import { PageHero } from "@/components/ui/PageHero";
 import { DistortionImage } from "@/components/three/DistortionImage";
@@ -41,7 +42,8 @@ export const WorkClient: React.FC = () => {
               const isMeHovered = hoveredId === project.id;
 
               return (
-                <div
+                <Link
+                  href={`/work/${project.id}`}
                   key={project.id}
                   onMouseEnter={() => setHoveredId(project.id)}
                   onMouseLeave={() => setHoveredId(null)}
@@ -95,7 +97,7 @@ export const WorkClient: React.FC = () => {
                       <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

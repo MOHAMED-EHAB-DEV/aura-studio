@@ -8,6 +8,8 @@ export interface Project {
   metrics: string[];
   client: string;
   services: string[];
+  content: string;
+  gallery: string[];
 }
 
 export interface Service {
@@ -44,6 +46,8 @@ export const projects: Project[] = [
     image: "/images/project-1.avif",
     description: "Architecting a high-speed, interactive decentralized gateway. Seamless Web3 integrations paired with generative fluid art. Realized an immersive ecosystem where high-frequency transactions flow within a responsive visual space.",
     metrics: ["+140% Conversion", "0.4s Avg Load Time", "$1.2B Locked Value"],
+    content: "Quantum Labs approached us to redefine the decentralized exchange landscape. Moving away from the cluttered, dashboard-heavy aesthetics typical of Web3, we engineered a platform that feels like an immersive digital art installation. By blending high-performance smart contracts with bespoke WebGL fluid shaders, we created an environment where transactions feel organic, fast, and secure. Our UX architecture prioritizes clarity, utilizing severe typography and high-contrast layouts to guide users through complex financial interactions seamlessly.",
+    gallery: ["/images/project-1.avif", "/images/project-3.avif", "/images/project-4.avif"],
     client: "Quantum Labs Ltd.",
     services: ["Creative Direction", "Web3 Development", "WebGL Shaders", "UX Architecture"]
   },
@@ -55,6 +59,8 @@ export const projects: Project[] = [
     image: "/images/project-2.avif",
     description: "Rebranding a premier architecture collective. Translating physical brutalist forms into monolithic, editorial screen realities. Using bold asymmetric grids, raw tactile layouts, and severe typographic statements.",
     metrics: ["Reddot Design Winner", "5M+ Monthly Reach", "100% Brand Recall"],
+    content: "Neolith Studios, an avant-garde architecture collective, required a digital presence as imposing and structural as their physical creations. We threw out the standard portfolio template, replacing it with a brutalist, editorial interface. Navigation acts as spatial exploration, utilizing asymmetric grids and bold typographic scale to emphasize the magnitude of their work. The resulting interactive portfolio doesn't just showcase images; it translates the visceral feeling of standing in a Neolith-designed space into a screen reality.",
+    gallery: ["/images/project-2.avif", "/images/member-1.jpg", "/images/project-1.avif"],
     client: "Neolith Group",
     services: ["Brand Strategy", "Corporate Identity", "Interactive Portfolio", "Spatial Design"]
   },
@@ -66,6 +72,8 @@ export const projects: Project[] = [
     image: "/images/project-3.avif",
     description: "A secure, gesture-driven asset workspace designed for high-net-worth tech leaders. Fluid reactive charts, real-time portfolio streams, and an interactive command interface that responds to intuitive shortcuts.",
     metrics: ["$24B Transacted", "99.99% Core Uptime", "4.9 App Store Rating"],
+    content: "Helix Ecosystem was conceived as the ultimate command center for high-net-worth tech leaders managing complex digital assets. Security and speed were paramount, but we refused to compromise on aesthetics. The interface is entirely gesture-driven, featuring fluid reactive charts that respond instantly to market shifts. By stripping away extraneous UI elements and focusing on real-time data streams and intuitive keyboard shortcuts, we crafted an application that feels less like software and more like a direct extension of the user's intent.",
+    gallery: ["/images/project-3.avif", "/images/project-2.avif", "/images/member-2.jpg"],
     client: "Helix Protocol",
     services: ["UI/UX Engineering", "Data Visualization", "Mobile App Dev", "Security Audit"]
   },
@@ -77,6 +85,8 @@ export const projects: Project[] = [
     image: "/images/project-4.avif",
     description: "An high-end e-commerce experience showcasing seasonal collections. Integrated liquid displacement hover transitions, custom video styling rails, and an interactive tailoring simulation engine.",
     metrics: ["2.4x Cart Value", "380k Active Users", "42% Direct Uplift"],
+    content: "Lumina Couture approached us to translate their high-end Parisian aesthetic into a digital commerce experience. The goal was to make browsing a seasonal collection feel as luxurious as a private runway show. We integrated liquid displacement hover transitions on all product imagery, giving the fabric a sense of motion and texture. Paired with custom video styling rails and a real-time 3D tailoring simulation engine, the platform elevates e-commerce into a premium interactive journey, dramatically increasing both cart value and brand loyalty.",
+    gallery: ["/images/project-4.avif", "/images/project-1.avif", "/images/member-3.jpg"],
     client: "Lumina Paris",
     services: ["Digital Experience", "Creative Direction", "3D Web Configurator", "Global SEO"]
   }

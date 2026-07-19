@@ -45,7 +45,7 @@ export const ServicesBento: React.FC = () => {
   return (
     <section className="relative w-full bg-brand-bg px-6 py-20 md:px-12 md:py-32 overflow-hidden">
       {/* Background Decorative Element */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/5 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-brand-primary/5 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}

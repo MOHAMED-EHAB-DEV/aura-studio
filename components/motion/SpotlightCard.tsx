@@ -64,7 +64,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
           />
           {/* Spotlight Border Glow */}
           <div
-            className="pointer-events-none absolute -inset-[1px] z-10 rounded-3xl opacity-100 transition-opacity duration-300"
+            className="pointer-events-none absolute -inset-px z-10 rounded-3xl opacity-100 transition-opacity duration-300"
             style={{
               background: `radial-gradient(200px circle at ${coords.x}px ${coords.y}px, ${borderColor}, transparent 60%)`,
               padding: "1px",

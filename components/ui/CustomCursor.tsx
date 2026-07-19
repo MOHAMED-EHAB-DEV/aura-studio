@@ -80,8 +80,8 @@ export const CustomCursor: React.FC = () => {
       <motion.div
         animate={{
           scale: isHovered ? 2.2 : 1,
-          backgroundColor: isHovered ? "rgba(255, 69, 0, 0.25)" : "transparent",
-          borderColor: isHovered ? "transparent" : "var(--color-primary)",
+          backgroundColor: isHovered ? "rgba(255, 69, 0, 0.25)" : "rgba(255, 69, 0, 0)",
+          borderColor: isHovered ? "rgba(255, 69, 0, 0)" : "var(--color-primary)",
         }}
         transition={{ type: "spring", damping: 25, stiffness: 200 }}
         style={{
