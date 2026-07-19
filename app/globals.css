@@ -1,9 +1,8 @@
 @import "tailwindcss";
-@import "./fonts.css";
 
 @theme {
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Syne", sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-syne), sans-serif;
   
   --color-brand-primary: var(--color-primary);
   --color-brand-primary-dark: var(--color-primary-dark);

@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const manrope = localFont({
+  src: "../public/fonts/subset-Manrope-VariableFont_wght.woff2",
+  variable: "--font-manrope",
+  weight: "100 800",
+  display: "swap",
+});
+
+const syne = localFont({
+  src: "../public/fonts/subset-Syne-VariableFont_wght.woff2",
+  variable: "--font-syne",
+  weight: "100 800",
+  display: "swap",
+});
 import { AudioProvider } from "@/context/AudioContext";
 import { LenisProvider } from "@/components/providers/LenisProvider";
 import { Navbar } from "@/components/layout/Navbar";
@@ -75,11 +90,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <link rel="preload" href="/fonts/subset-Manrope-VariableFont_wght.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/subset-Syne-VariableFont_wght.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-      </head>
+    <html lang="en" className={`dark ${manrope.variable} ${syne.variable}`}>
       <body>
         <AudioProvider>
           <LenisProvider>
