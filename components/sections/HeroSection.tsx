@@ -6,7 +6,7 @@ import { MagneticButton } from "../motion/MagneticButton";
 import { SplitText } from "../motion/SplitText";
 import { motion, AnimatePresence } from "motion/react";
 
-const LiquidShaderCanvas = dynamic(() => import("../three/LiquidShaderCanvas").then(m => m.LiquidShaderCanvas));
+const LiquidShaderCanvas = dynamic(() => import("../three/LiquidShaderCanvas").then(m => m.LiquidShaderCanvas), { ssr: false });
 
 export const HeroSection: React.FC = () => {
   const [showReel, setShowReel] = useState(false);
