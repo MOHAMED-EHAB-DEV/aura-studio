@@ -16,9 +16,20 @@ export const TiltCard: React.FC<TiltCardProps> = ({
   const cardRef = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
 
+  const rectRef = useRef<DOMRect | null>(null);
+
+  const handleMouseEnter = () => {
+    if (cardRef.current) {
+      rectRef.current = cardRef.current.getBoundingClientRect();
+    }
+  };
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
-    const { left, top, width, height } = cardRef.current.getBoundingClientRect();
+    const rect = rectRef.current || cardRef.current.getBoundingClientRect();
+    if (!rectRef.current) rectRef.current = rect;
+    
+    const { left, top, width, height } = rect;
     
     // Normalized coordinates between -0.5 and 0.5
     const x = (e.clientX - left) / width - 0.5;
@@ -34,6 +45,7 @@ export const TiltCard: React.FC<TiltCardProps> = ({
   };
 
   const handleMouseLeave = () => {
+    rectRef.current = null;
     setTransform("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
   };
 
@@ -41,6 +53,7 @@ export const TiltCard: React.FC<TiltCardProps> = ({
     <div
       id={id}
       ref={cardRef}
+      onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{

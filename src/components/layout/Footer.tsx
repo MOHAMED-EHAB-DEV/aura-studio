@@ -29,16 +29,16 @@ export const Footer: React.FC = () => {
             <p className="max-w-sm text-sm text-brand-muted leading-relaxed font-sans mb-6">
               We design and construct digital realities that stand the test of scrutiny. No compromises. No boilerplate. Just premium experiences.
             </p>
-            <div className="font-mono text-xs text-brand-muted/50">
+            <div className="font-mono text-xs text-brand-muted/80">
               EST. // 2023 - NY_LN
             </div>
           </div>
 
           {/* Col 2: Navigation */}
           <div>
-            <h4 className="font-mono text-xs font-semibold text-brand-muted/40 tracking-wider mb-6">
+            <div className="font-mono text-xs font-semibold text-brand-muted/80 tracking-wider mb-6">
               NAVIGATION
-            </h4>
+            </div>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link to="/" className="text-brand-muted hover:text-brand-text transition-colors">
@@ -70,9 +70,9 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Socials */}
           <div>
-            <h4 className="font-mono text-xs font-semibold text-brand-muted/40 tracking-wider mb-6">
+            <div className="font-mono text-xs font-semibold text-brand-muted/80 tracking-wider mb-6">
               SOCIALS
-            </h4>
+            </div>
             <ul className="space-y-3 text-sm">
               {socialLinks.map((social) => (
                 <li key={social.name}>
@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Banner Row */}
-        <div className="flex flex-col md:flex-row items-center justify-between border-t border-brand-border/40 pt-8 text-xs text-brand-muted/60">
+        <div className="flex flex-col md:flex-row items-center justify-between border-t border-brand-border/40 pt-8 text-xs text-brand-muted/85">
           <div className="mb-4 md:mb-0">
             <span className="font-mono text-[10px] tracking-widest uppercase">
               AURA CREATIVE STUDIO // GLOBAL DIGITAL GATEWAY

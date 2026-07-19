@@ -5,12 +5,19 @@ export function useTilt(ref: RefObject<HTMLElement | null>, maxRotation = 10) {
     const el = ref.current;
     if (!el) return;
 
+    let rect: DOMRect | null = null;
+
+    const handleMouseEnter = () => {
+      rect = el.getBoundingClientRect();
+    };
+
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const xc = rect.width / 2;
-      const yc = rect.height / 2;
+      const currentRect = rect || el.getBoundingClientRect();
+      if (!rect) rect = currentRect;
+      const x = e.clientX - currentRect.left;
+      const y = e.clientY - currentRect.top;
+      const xc = currentRect.width / 2;
+      const yc = currentRect.height / 2;
       const rotateX = ((yc - y) / yc) * maxRotation;
       const rotateY = ((x - xc) / xc) * maxRotation;
 
@@ -18,12 +25,15 @@ export function useTilt(ref: RefObject<HTMLElement | null>, maxRotation = 10) {
     };
 
     const handleMouseLeave = () => {
+      rect = null;
       el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
     };
 
+    el.addEventListener("mouseenter", handleMouseEnter);
     el.addEventListener("mousemove", handleMouseMove);
     el.addEventListener("mouseleave", handleMouseLeave);
     return () => {
+      el.removeEventListener("mouseenter", handleMouseEnter);
       el.removeEventListener("mousemove", handleMouseMove);
       el.removeEventListener("mouseleave", handleMouseLeave);
     };

@@ -29,13 +29,13 @@ export const ClientMarquee: React.FC = () => {
               key={`row1-${client.name}-${index}`}
               className="flex items-center space-x-4 md:space-x-6 select-none"
             >
-              <span className="font-display text-4xl md:text-6xl font-black tracking-tighter text-brand-text/30 hover:text-brand-primary transition-colors cursor-default">
+              <span className="font-display text-4xl md:text-6xl font-black tracking-tighter text-brand-text/70 hover:text-brand-primary transition-colors cursor-default">
                 {client.name}
               </span>
-              <span className="font-mono text-[10px] rounded border border-brand-primary/20 px-1.5 py-0.5 text-brand-primary/50">
+              <span className="font-mono text-[10px] rounded border border-brand-primary/20 px-1.5 py-0.5 text-brand-primary/85">
                 {client.code}
               </span>
-              <span className="text-brand-primary/30 text-xl font-bold">•</span>
+              <span className="text-brand-primary/65 text-xl font-bold">•</span>
             </div>
           ))}
         </motion.div>
@@ -57,13 +57,13 @@ export const ClientMarquee: React.FC = () => {
               key={`row2-${client.name}-${index}`}
               className="flex items-center space-x-4 md:space-x-6 select-none"
             >
-              <span className="font-display text-4xl md:text-6xl font-black tracking-tighter text-brand-text/30 hover:text-brand-primary transition-colors cursor-default">
+              <span className="font-display text-4xl md:text-6xl font-black tracking-tighter text-brand-text/70 hover:text-brand-primary transition-colors cursor-default">
                 {client.name}
               </span>
-              <span className="font-mono text-[10px] rounded border border-brand-primary/20 px-1.5 py-0.5 text-brand-primary/50">
+              <span className="font-mono text-[10px] rounded border border-brand-primary/20 px-1.5 py-0.5 text-brand-primary/85">
                 {client.code}
               </span>
-              <span className="text-brand-primary/30 text-xl font-bold">•</span>
+              <span className="text-brand-primary/65 text-xl font-bold">•</span>
             </div>
           ))}
         </motion.div>

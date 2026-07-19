@@ -6,10 +6,17 @@ export function useMagnetic(ref: RefObject<HTMLElement | null>, force = 0.3) {
     const el = ref.current;
     if (!el) return;
 
+    let rect: DOMRect | null = null;
+
+    const handleMouseEnter = () => {
+      rect = el.getBoundingClientRect();
+    };
+
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = el.getBoundingClientRect();
-      const relX = e.clientX - rect.left - rect.width / 2;
-      const relY = e.clientY - rect.top - rect.height / 2;
+      const currentRect = rect || el.getBoundingClientRect();
+      if (!rect) rect = currentRect;
+      const relX = e.clientX - currentRect.left - currentRect.width / 2;
+      const relY = e.clientY - currentRect.top - currentRect.height / 2;
 
       gsap.to(el, {
         x: relX * force,
@@ -20,6 +27,7 @@ export function useMagnetic(ref: RefObject<HTMLElement | null>, force = 0.3) {
     };
 
     const handleMouseLeave = () => {
+      rect = null;
       gsap.to(el, {
         x: 0,
         y: 0,
@@ -28,9 +36,11 @@ export function useMagnetic(ref: RefObject<HTMLElement | null>, force = 0.3) {
       });
     };
 
+    el.addEventListener("mouseenter", handleMouseEnter);
     el.addEventListener("mousemove", handleMouseMove);
     el.addEventListener("mouseleave", handleMouseLeave);
     return () => {
+      el.removeEventListener("mouseenter", handleMouseEnter);
       el.removeEventListener("mousemove", handleMouseMove);
       el.removeEventListener("mouseleave", handleMouseLeave);
     };

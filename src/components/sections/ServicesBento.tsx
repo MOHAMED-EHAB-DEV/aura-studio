@@ -83,7 +83,7 @@ export const ServicesBento: React.FC = () => {
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-bg border border-brand-border/60">
                     {getIcon(service.id)}
                   </div>
-                  <span className="font-mono text-[10px] tracking-widest text-brand-muted/40 font-bold uppercase">
+                  <span className="font-mono text-[10px] tracking-widest text-brand-muted/75 font-bold uppercase">
                     SEC_0{services.indexOf(service) + 1}
                   </span>
                 </div>
@@ -107,7 +107,7 @@ export const ServicesBento: React.FC = () => {
                 {service.capabilities.map((cap) => (
                   <span
                     key={cap}
-                    className="rounded-full bg-brand-bg border border-brand-border/60 px-3 py-1 font-mono text-[9px] tracking-wider text-brand-text/80 uppercase"
+                    className="rounded-full bg-brand-bg border border-brand-border/60 px-3 py-1 font-mono text-[9px] tracking-wider text-brand-text uppercase"
                   >
                     {cap}
                   </span>

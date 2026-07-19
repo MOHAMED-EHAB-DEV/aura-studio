@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
 
-interface MagneticButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface MagneticButtonProps extends Omit<React.ComponentPropsWithoutRef<typeof motion.button>, "style"> {
   children: React.ReactNode;
   className?: string;
   id?: string;
@@ -28,10 +28,22 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
   const springX = useSpring(x, springConfig);
   const springY = useSpring(y, springConfig);
 
+  const rectRef = useRef<DOMRect | null>(null);
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+    if (ref.current) {
+      rectRef.current = ref.current.getBoundingClientRect();
+    }
+  };
+
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return;
     const { clientX, clientY } = e;
-    const { left, top, width, height } = ref.current.getBoundingClientRect();
+    const rect = rectRef.current || ref.current.getBoundingClientRect();
+    if (!rectRef.current) rectRef.current = rect;
+    
+    const { left, top, width, height } = rect;
     
     // Calculate distance from center of the button
     const centerX = left + width / 2;
@@ -48,6 +60,7 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
 
   const handleMouseLeave = () => {
     setHovered(false);
+    rectRef.current = null;
     x.set(0);
     y.set(0);
   };
@@ -56,7 +69,7 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
     <div
       ref={ref}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setHovered(true)}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className="magnetic-wrap inline-block"
     >

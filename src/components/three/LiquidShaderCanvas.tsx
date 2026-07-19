@@ -87,6 +87,7 @@ export const LiquidShaderCanvas: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
   const [hasWebGL, setHasWebGL] = useState(true);
   const mouseRef = useRef<[number, number]>([0.5, 0.5]);
+  const rectRef = useRef<DOMRect | null>(null);
 
   // Check WebGL availability on mount
   useEffect(() => {
@@ -102,11 +103,20 @@ export const LiquidShaderCanvas: React.FC = () => {
     }
   }, []);
 
+  const handleMouseEnter = (e: React.MouseEvent) => {
+    rectRef.current = e.currentTarget.getBoundingClientRect();
+  };
+
   const handleMouseMove = (e: React.MouseEvent) => {
-    const rect = e.currentTarget.getBoundingClientRect();
+    const rect = rectRef.current || e.currentTarget.getBoundingClientRect();
+    if (!rectRef.current) rectRef.current = rect;
     const x = (e.clientX - rect.left) / rect.width;
     const y = 1.0 - (e.clientY - rect.top) / rect.height; // Invert Y for WebGL convention
     mouseRef.current = [x, y];
+  };
+
+  const handleMouseLeave = () => {
+    rectRef.current = null;
   };
 
   // Graceful fallback for reduced motion preferences or unsupported WebGL
@@ -125,7 +135,9 @@ export const LiquidShaderCanvas: React.FC = () => {
 
   return (
     <div
+      onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className="absolute inset-0 z-0 h-full w-full overflow-hidden"
     >
       <Canvas

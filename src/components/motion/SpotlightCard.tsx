@@ -19,13 +19,28 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [isFocused, setIsFocused] = useState(false);
 
+  const rectRef = useRef<DOMRect | null>(null);
+
+  const handleMouseEnter = () => {
+    setIsFocused(true);
+    if (cardRef.current) {
+      rectRef.current = cardRef.current.getBoundingClientRect();
+    }
+  };
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
-    const { left, top } = cardRef.current.getBoundingClientRect();
+    const rect = rectRef.current || cardRef.current.getBoundingClientRect();
+    if (!rectRef.current) rectRef.current = rect;
     setCoords({
-      x: e.clientX - left,
-      y: e.clientY - top,
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
     });
+  };
+
+  const handleMouseLeave = () => {
+    setIsFocused(false);
+    rectRef.current = null;
   };
 
   return (
@@ -33,8 +48,8 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
       id={id}
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsFocused(true)}
-      onMouseLeave={() => setIsFocused(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className={`relative overflow-hidden rounded-3xl border border-brand-border bg-brand-surface transition-all duration-300 ${className}`}
     >
       {isFocused && (

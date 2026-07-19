@@ -104,7 +104,7 @@ export const Contact: React.FC = () => {
                   <Mail size={16} />
                 </div>
                 <div>
-                  <span className="block font-mono text-[9px] tracking-wider text-brand-muted/40 uppercase">
+                  <span className="block font-mono text-[9px] tracking-wider text-brand-muted/75 uppercase">
                     GENERAL_ENQUIRIES
                   </span>
                   <a href="mailto:hello@aura-studio.com" className="font-display text-lg font-bold text-brand-text hover:text-brand-primary transition-colors">
@@ -119,7 +119,7 @@ export const Contact: React.FC = () => {
                   <MapPin size={16} />
                 </div>
                 <div>
-                  <span className="block font-mono text-[9px] tracking-wider text-brand-muted/40 uppercase">
+                  <span className="block font-mono text-[9px] tracking-wider text-brand-muted/75 uppercase">
                     OUR_BASES
                   </span>
                   <p className="font-sans text-sm text-brand-text">
@@ -130,7 +130,7 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Micro-brand watermark */}
-            <div className="hidden lg:block font-mono text-[9px] text-brand-muted/30 uppercase tracking-widest pt-12">
+            <div className="hidden lg:block font-mono text-[9px] text-brand-muted/70 uppercase tracking-widest pt-12">
               AURA_CHANNELS_EST_2023 // ALL_CONNECTIONS_SSL
             </div>
           </div>
@@ -194,7 +194,7 @@ export const Contact: React.FC = () => {
                     errors.budget ? "border-brand-primary/40" : "border-brand-border"
                   }`}
                 >
-                  <option value="" className="text-brand-muted/40 bg-brand-surface">Select projected budget range</option>
+                  <option value="" className="text-brand-muted/75 bg-brand-surface">Select projected budget range</option>
                   <option value="10k-25k" className="bg-brand-surface">$10,000 – $25,000</option>
                   <option value="25k-50k" className="bg-brand-surface">$25,000 – $50,000</option>
                   <option value="50k-100k" className="bg-brand-surface">$50,000 – $100,000</option>

@@ -70,7 +70,7 @@ export const WorkShowcase: React.FC = () => {
     <div ref={containerRef} className="relative bg-brand-bg select-none">
       <h2 className="sr-only">Selected Case Studies</h2>
       {/* Scroll indicator overlay */}
-      <div className="hidden md:flex absolute top-12 left-12 z-30 items-center space-x-6 font-mono text-[10px] tracking-widest text-brand-muted/40">
+      <div className="hidden md:flex absolute top-12 left-12 z-30 items-center space-x-6 font-mono text-[10px] tracking-widest text-brand-muted/75">
         <span>PROJECTS_04</span>
         <div className="flex space-x-2">
           {projects.map((_, i) => (
@@ -143,7 +143,7 @@ export const WorkShowcase: React.FC = () => {
                     return (
                       <div key={i} className="text-left">
                         <span className="block text-lg font-bold text-brand-primary">{val}</span>
-                        <span className="block text-[9px] tracking-wider text-brand-muted/70 uppercase">
+                        <span className="block text-[9px] tracking-wider text-brand-muted/85 uppercase">
                           {label || "Uplift"}
                         </span>
                       </div>
@@ -172,7 +172,7 @@ export const WorkShowcase: React.FC = () => {
       <div className="relative py-12 md:py-16 border-t border-brand-border/20 px-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
         <div className="text-left">
           <p className="font-mono text-xs text-brand-primary font-semibold">// CURATED_WORK</p>
-          <h4 className="font-display text-xl font-bold text-brand-text mt-1">Want to see all projects?</h4>
+          <p className="font-display text-xl font-bold text-brand-text mt-1">Want to see all projects?</p>
         </div>
         <Link
           to="/work"

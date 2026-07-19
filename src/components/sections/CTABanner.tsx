@@ -45,7 +45,7 @@ export const CTABanner: React.FC = () => {
         </div>
 
         {/* Subtle status tag */}
-        <div className="mt-16 font-mono text-[9px] tracking-wider text-brand-muted/40">
+        <div className="mt-16 font-mono text-[9px] tracking-wider text-brand-muted/75">
           PROJECT_AVAILABILITY // Q2-Q3 2026: 2 SLOTS OPEN
         </div>
       </div>

@@ -41,7 +41,7 @@ export const ManifestoSection: React.FC = () => {
       className="relative flex min-h-[85vh] w-full flex-col justify-center bg-brand-bg px-6 py-24 md:px-12 md:py-36 overflow-hidden"
     >
       {/* Editorial Watermark */}
-      <div className="absolute right-6 top-12 font-mono text-[10px] tracking-widest text-brand-muted/20 select-none">
+      <div className="absolute right-6 top-12 font-mono text-[10px] tracking-widest text-brand-muted/65 select-none">
         AURA_MANIFESTO_V3.9
       </div>
 
@@ -73,7 +73,7 @@ export const ManifestoSection: React.FC = () => {
         </div>
 
         {/* Bottom indicators */}
-        <div className="mt-16 flex flex-col sm:flex-row justify-between items-start sm:items-center border-t border-brand-border/20 pt-8 font-mono text-xs text-brand-muted/40 gap-4">
+        <div className="mt-16 flex flex-col sm:flex-row justify-between items-start sm:items-center border-t border-brand-border/20 pt-8 font-mono text-xs text-brand-muted/75 gap-4">
           <span>// PERSISTENCE_OF_VISION</span>
           <span>AURA STUDIO — © MOHAMED EHAB</span>
         </div>

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Play from "../ui/svgs/Play";
 import X from "../ui/svgs/X";
-import { LiquidShaderCanvas } from "../three/LiquidShaderCanvas";
+const LiquidShaderCanvas = React.lazy(() => import("../three/LiquidShaderCanvas").then(m => ({ default: m.LiquidShaderCanvas })));
 import { MagneticButton } from "../motion/MagneticButton";
 import { SplitText } from "../motion/SplitText";
 import { motion, AnimatePresence } from "motion/react";
@@ -13,7 +13,9 @@ export const HeroSection: React.FC = () => {
     <>
       <section className="relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-brand-bg px-6 pb-12 pt-32 md:px-12 md:pb-16 md:pt-40">
         {/* Background WebGL Liquid Shader */}
-        <LiquidShaderCanvas />
+        <Suspense fallback={<div className="absolute inset-0 z-0 h-full w-full bg-brand-bg opacity-30" />}>
+          <LiquidShaderCanvas />
+        </Suspense>
 
         {/* Decorative Grid Lines */}
         <div className="pointer-events-none absolute inset-0 z-10 grid grid-cols-4 border-x border-brand-border/10">
@@ -23,7 +25,7 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Top/Intro Text */}
-        <div className="relative z-20 flex w-full flex-col md:flex-row justify-between items-start md:items-center text-xs font-mono tracking-widest text-brand-muted/80 gap-4">
+        <div className="relative z-20 flex w-full flex-col md:flex-row justify-between items-start md:items-center text-xs font-mono tracking-widest text-brand-muted gap-4">
           <div className="flex items-center space-x-2">
             <span className="h-1.5 w-1.5 rounded-full bg-brand-primary animate-ping" />
             <span>AURA_STUDIO // NEW YORK - LONDON</span>
@@ -55,7 +57,7 @@ export const HeroSection: React.FC = () => {
 
           <div className="flex items-center space-x-8">
             {/* Scroll indicator */}
-            <div className="hidden md:flex flex-col items-start font-mono text-[10px] tracking-widest text-brand-muted/50">
+            <div className="hidden md:flex flex-col items-start font-mono text-[10px] tracking-widest text-brand-muted/80">
               <span>SCROLL_TO_DISCOVER</span>
               <div className="mt-2 h-16 w-[1px] bg-brand-border/40 relative overflow-hidden">
                 <motion.div

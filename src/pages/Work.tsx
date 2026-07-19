@@ -36,7 +36,7 @@ export const Work: React.FC = () => {
         <div className="mx-auto max-w-7xl">
           
           {/* Work count indicators */}
-          <div className="mb-8 flex items-center justify-between font-mono text-[10px] tracking-wider text-brand-muted/50 uppercase">
+          <div className="mb-8 flex items-center justify-between font-mono text-[10px] tracking-wider text-brand-muted/80 uppercase">
             <span>INDEX_RECORDS: 04_ITEMS</span>
             <span>FILTER // ALL_SECTIONS</span>
           </div>
@@ -75,7 +75,7 @@ export const Work: React.FC = () => {
                           </span>
                         ))}
                       </div>
-                      <p className="font-mono text-[9px] text-white/50 tracking-widest uppercase">
+                      <p className="font-mono text-[9px] text-white/80 tracking-widest uppercase">
                         CLIENT: {project.client}
                       </p>
                     </div>

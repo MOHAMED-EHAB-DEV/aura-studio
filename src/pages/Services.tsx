@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
       <section className="relative bg-brand-bg px-6 py-20 md:px-12 md:py-28 border-b border-brand-border/20">
         <div className="mx-auto max-w-7xl">
           
-          <div className="mb-12 font-mono text-[10px] tracking-widest text-brand-muted/40 uppercase">
+          <div className="mb-12 font-mono text-[10px] tracking-widest text-brand-muted/75 uppercase">
             // SERVICE_CATEGORIES: 04_CHANNELS
           </div>
 
@@ -63,7 +63,7 @@ export const Services: React.FC = () => {
                     aria-label={`Toggle details for ${service.title}`}
                   >
                     <div className="flex items-center space-x-6 md:space-x-12">
-                      <span className="font-mono text-sm text-brand-muted/40 group-hover:text-brand-primary transition-colors">
+                      <span className="font-mono text-sm text-brand-muted/75 group-hover:text-brand-primary transition-colors">
                         /0{index + 1}
                       </span>
                       <h2 className="font-display text-2xl md:text-4xl font-black tracking-tight text-brand-text group-hover:text-brand-primary transition-colors uppercase">
@@ -102,7 +102,7 @@ export const Services: React.FC = () => {
                               {service.capabilities.map((cap) => (
                                 <span
                                   key={cap}
-                                  className="rounded-full bg-brand-surface border border-brand-border/60 px-3 py-1 font-mono text-[9px] tracking-wider text-brand-text/80 uppercase"
+                                  className="rounded-full bg-brand-surface border border-brand-border/60 px-3 py-1 font-mono text-[9px] tracking-wider text-brand-text uppercase"
                                 >
                                   {cap}
                                 </span>

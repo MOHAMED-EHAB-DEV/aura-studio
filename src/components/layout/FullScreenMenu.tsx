@@ -124,7 +124,7 @@ export const FullScreenMenu: React.FC<FullScreenMenuProps> = ({
           <div className="absolute inset-0 z-20 overflow-y-auto flex flex-col justify-between p-6 md:p-12">
             {/* Top Panel Bar */}
             <div className="relative flex w-full items-center justify-between shrink-0 mb-8 md:mb-0">
-              <span className="font-display text-2xl font-bold tracking-tight text-white/40">
+              <span className="font-display text-2xl font-bold tracking-tight text-white/75">
                 AURA_MENU
               </span>
               <MagneticButton
@@ -167,10 +167,10 @@ export const FullScreenMenu: React.FC<FullScreenMenuProps> = ({
                           className={`group font-display text-4xl sm:text-5xl font-black tracking-tighter leading-none md:text-8xl flex items-baseline transition-all duration-300 ${
                             isActive
                               ? "text-brand-primary"
-                              : "text-white/60 hover:text-white hover:translate-x-4"
+                              : "text-white/80 hover:text-white hover:translate-x-4"
                           }`}
                         >
-                          <span className="mr-4 text-sm sm:text-xl font-medium tracking-normal text-white/30 group-hover:text-brand-primary">
+                          <span className="mr-4 text-sm sm:text-xl font-medium tracking-normal text-white/70 group-hover:text-brand-primary">
                             /0{navItems.indexOf(item) + 1}
                           </span>
                           {item.label}
@@ -184,10 +184,10 @@ export const FullScreenMenu: React.FC<FullScreenMenuProps> = ({
             </nav>
 
             {/* Bottom Footer Info */}
-            <div className="relative flex flex-col md:flex-row justify-between border-t border-white/10 pt-6 text-sm text-white/50 shrink-0 mt-8 md:mt-0">
+            <div className="relative flex flex-col md:flex-row justify-between border-t border-white/10 pt-6 text-sm text-white/80 shrink-0 mt-8 md:mt-0">
               <div className="flex flex-wrap gap-x-12 gap-y-4 mb-4 md:mb-0">
                 <div>
-                  <p className="font-semibold text-white/30 mb-1">INQUIRIES</p>
+                  <p className="font-semibold text-white/70 mb-1">INQUIRIES</p>
                   <a
                     href="mailto:hello@aura-studio.com"
                     className="hover:text-white transition-colors"
@@ -196,12 +196,12 @@ export const FullScreenMenu: React.FC<FullScreenMenuProps> = ({
                   </a>
                 </div>
                 <div>
-                  <p className="font-semibold text-white/30 mb-1">OFFICES</p>
+                  <p className="font-semibold text-white/70 mb-1">OFFICES</p>
                   <p>New York / London</p>
                 </div>
               </div>
               <div className="flex items-end text-left md:text-right">
-                <span className="font-mono text-xs text-white/30">
+                <span className="font-mono text-xs text-white/70">
                   LATITUDE: 40.7128° N, 74.0060° W
                 </span>
               </div>

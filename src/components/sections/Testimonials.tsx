@@ -52,7 +52,7 @@ export const Testimonials: React.FC = () => {
                 <p className="font-display text-sm font-bold text-brand-text uppercase tracking-tight">
                   {test.author}
                 </p>
-                <div className="flex items-center justify-between font-mono text-[10px] text-brand-muted/70 mt-1">
+                <div className="flex items-center justify-between font-mono text-[10px] text-brand-muted/85 mt-1">
                   <span>{test.role}</span>
                   <span className="text-brand-primary font-semibold">// {test.company}</span>
                 </div>
