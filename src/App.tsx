@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,12 +12,12 @@ import { AudioProvider } from "./context/AudioContext";
 import { Navbar } from "./components/layout/Navbar";
 import { CustomCursor } from "./components/ui/CustomCursor";
 
-// Page component imports
-import Home from "./pages/Home";
-import Work from "./pages/Work";
-import Services from "./pages/Services";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+// Page component imports (Dynamic Code Splitting)
+const Home = React.lazy(() => import("./pages/Home"));
+const Work = React.lazy(() => import("./pages/Work"));
+const Services = React.lazy(() => import("./pages/Services"));
+const About = React.lazy(() => import("./pages/About"));
+const Contact = React.lazy(() => import("./pages/Contact"));
 
 // Smooth Scroll + GSAP ScrollTrigger integration manager
 const LayoutWrapper: React.FC = () => {

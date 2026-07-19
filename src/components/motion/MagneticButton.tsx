@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
 
-interface MagneticButtonProps {
+interface MagneticButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className?: string;
   id?: string;
@@ -15,6 +15,7 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
   id,
   onClick,
   disabled = false,
+  ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
@@ -66,6 +67,7 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
         style={{ x: springX, y: springY }}
         className={className}
         whileTap={{ scale: 0.96 }}
+        {...props}
       >
         {children}
       </motion.button>

@@ -5,7 +5,10 @@ import { gsap, ScrollTrigger } from "../../lib/gsap";
 import { projects } from "../../data/agencyData";
 import { DistortionImage } from "../three/DistortionImage";
 import { useAudio } from "../../context/AudioContext";
-import { ArrowUpRight, Award, Hash, ArrowRight } from "lucide-react";
+import ArrowUpRight from "../ui/svgs/ArrowUpRight";
+import Award from "../ui/svgs/Award";
+import Hash from "../ui/svgs/Hash";
+import ArrowRight from "../ui/svgs/ArrowRight";
 import { MagneticButton } from "../motion/MagneticButton";
 
 export const WorkShowcase: React.FC = () => {
@@ -65,6 +68,7 @@ export const WorkShowcase: React.FC = () => {
 
   return (
     <div ref={containerRef} className="relative bg-brand-bg select-none">
+      <h2 className="sr-only">Selected Case Studies</h2>
       {/* Scroll indicator overlay */}
       <div className="hidden md:flex absolute top-12 left-12 z-30 items-center space-x-6 font-mono text-[10px] tracking-widest text-brand-muted/40">
         <span>PROJECTS_04</span>

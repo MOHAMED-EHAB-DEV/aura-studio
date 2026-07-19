@@ -1,3 +1,12 @@
+import project1 from "../assets/project-1.avif";
+import project2 from "../assets/project-2.avif";
+import project3 from "../assets/project-3.avif";
+import project4 from "../assets/project-4.avif";
+import member1 from "../assets/member-1.jpg";
+import member2 from "../assets/member-2.jpg";
+import member3 from "../assets/member-3.jpg";
+
+
 export interface Project {
   id: string;
   title: string;
@@ -41,7 +50,7 @@ export const projects: Project[] = [
     title: "QUANTUM LABS",
     category: "Web3 / Dynamic Platform",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    image: project1,
     description: "Architecting a high-speed, interactive decentralized gateway. Seamless Web3 integrations paired with generative fluid art. Realized an immersive ecosystem where high-frequency transactions flow within a responsive visual space.",
     metrics: ["+140% Conversion", "0.4s Avg Load Time", "$1.2B Locked Value"],
     client: "Quantum Labs Ltd.",
@@ -52,7 +61,7 @@ export const projects: Project[] = [
     title: "NEOLITH STUDIOS",
     category: "Branding / Digital Identity",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    image: project2,
     description: "Rebranding a premier architecture collective. Translating physical brutalist forms into monolithic, editorial screen realities. Using bold asymmetric grids, raw tactile layouts, and severe typographic statements.",
     metrics: ["Reddot Design Winner", "5M+ Monthly Reach", "100% Brand Recall"],
     client: "Neolith Group",
@@ -63,7 +72,7 @@ export const projects: Project[] = [
     title: "HELIX ECOSYSTEM",
     category: "Fintech / Core Interface",
     year: "2026",
-    image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1200&q=80",
+    image: project3,
     description: "A secure, gesture-driven asset workspace designed for high-net-worth tech leaders. Fluid reactive charts, real-time portfolio streams, and an interactive command interface that responds to intuitive shortcuts.",
     metrics: ["$24B Transacted", "99.99% Core Uptime", "4.9 App Store Rating"],
     client: "Helix Protocol",
@@ -74,7 +83,7 @@ export const projects: Project[] = [
     title: "LUMINA COUTURE",
     category: "E-Commerce / Experience",
     year: "2026",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+    image: project4,
     description: "An high-end e-commerce experience showcasing seasonal collections. Integrated liquid displacement hover transitions, custom video styling rails, and an interactive tailoring simulation engine.",
     metrics: ["2.4x Cart Value", "380k Active Users", "42% Direct Uplift"],
     client: "Lumina Paris",
@@ -122,21 +131,21 @@ export const team: TeamMember[] = [
     id: "member-1",
     name: "Mohamed Ehab",
     role: "Founder & Creative Director",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+    image: member1,
     bio: "Pioneering immersive interfaces that bridge WebGL, high-concept typography, and technical excellence. Committed to creating websites that feel like responsive art galleries."
   },
   {
     id: "member-2",
     name: "Aria Thorne",
     role: "Lead 3D & Graphics Engineer",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+    image: member2,
     bio: "GLSL mathematical artist. Writing custom vertex and fragment shaders that translate organic natural elements like wind, liquid, and sound into real-time render steps."
   },
   {
     id: "member-3",
     name: "Marcus Vance",
     role: "UX Architect & Systems Designer",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+    image: member3,
     bio: "Focusing on performance-critical interactions and bulletproof micro-interactions. Merging strict accessibility protocols with radical experimental design formats."
   }
 ];

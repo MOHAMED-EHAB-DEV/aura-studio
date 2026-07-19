@@ -2,7 +2,11 @@ import React from "react";
 import { services } from "../../data/agencyData";
 import { SpotlightCard } from "../motion/SpotlightCard";
 import { VelocitySkewText } from "../motion/VelocitySkewText";
-import { ArrowUpRight, Cpu, Layers, Sparkles, TrendingUp } from "lucide-react";
+import ArrowUpRight from "../ui/svgs/ArrowUpRight";
+import Cpu from "../ui/svgs/Cpu";
+import Layers from "../ui/svgs/Layers";
+import Sparkles from "../ui/svgs/Sparkles";
+import TrendingUp from "../ui/svgs/TrendingUp";
 import { Link } from "react-router-dom";
 
 export const ServicesBento: React.FC = () => {

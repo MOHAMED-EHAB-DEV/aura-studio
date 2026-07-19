@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import ArrowUpRight from "../ui/svgs/ArrowUpRight";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();

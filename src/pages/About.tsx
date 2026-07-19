@@ -4,7 +4,11 @@ import { team } from "../data/agencyData";
 import { PageHero } from "../components/ui/PageHero";
 import { TiltCard } from "../components/motion/TiltCard";
 import { Footer } from "../components/layout/Footer";
-import { ArrowUpRight, Award, Compass, Heart } from "lucide-react";
+import ArrowUpRight from "../components/ui/svgs/ArrowUpRight";
+import Award from "../components/ui/svgs/Award";
+import Compass from "../components/ui/svgs/Compass";
+import Heart from "../components/ui/svgs/Heart";
+import SEO from "../components/seo/SEO";
 
 export const About: React.FC = () => {
   const stats = [
@@ -22,6 +26,11 @@ export const About: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="relative w-full"
     >
+      <SEO
+        title="About the Studio // AURA Studio"
+        description="Meet AURA Studio, a collective of digital architects, designers, and creative engineers pushing the boundaries of web experiences."
+        path="/about"
+      />
       {/* Page Hero */}
       <PageHero
         category="STUDIO_PHILOSOPHY"

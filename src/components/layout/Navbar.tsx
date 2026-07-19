@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, Volume2, VolumeX } from "lucide-react";
+import Menu from "../ui/svgs/Menu";
+import Volume2 from "../ui/svgs/Volume2";
+import VolumeX from "../ui/svgs/VolumeX";
 import { useAudio } from "../../context/AudioContext";
 import { MagneticButton } from "../motion/MagneticButton";
 import { FullScreenMenu } from "./FullScreenMenu";

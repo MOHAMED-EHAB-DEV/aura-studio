@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Play, X } from "lucide-react";
+import Play from "../ui/svgs/Play";
+import X from "../ui/svgs/X";
 import { LiquidShaderCanvas } from "../three/LiquidShaderCanvas";
 import { MagneticButton } from "../motion/MagneticButton";
 import { SplitText } from "../motion/SplitText";

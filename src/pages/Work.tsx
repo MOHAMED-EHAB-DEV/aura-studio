@@ -4,7 +4,9 @@ import { projects } from "../data/agencyData";
 import { PageHero } from "../components/ui/PageHero";
 import { DistortionImage } from "../components/three/DistortionImage";
 import { Footer } from "../components/layout/Footer";
-import { ArrowUpRight, Hash } from "lucide-react";
+import ArrowUpRight from "../components/ui/svgs/ArrowUpRight";
+import Hash from "../components/ui/svgs/Hash";
+import SEO from "../components/seo/SEO";
 
 export const Work: React.FC = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -17,6 +19,11 @@ export const Work: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="relative w-full"
     >
+      <SEO
+        title="Selected Works // AURA Studio"
+        description="Explore our portfolio of award-winning digital products, immersive 3D websites, and premium brand architectures designed by AURA Studio."
+        path="/work"
+      />
       {/* Page Hero */}
       <PageHero
         category="PORTFOLIO_INDEX"
@@ -81,9 +88,9 @@ export const Work: React.FC = () => {
                         <Hash size={10} />
                         <span>0{index + 1} // YEAR: {project.year}</span>
                       </div>
-                      <h3 className="font-display text-2xl font-black tracking-tight text-brand-text group-hover:text-brand-primary transition-colors uppercase">
+                      <h2 className="font-display text-2xl font-black tracking-tight text-brand-text group-hover:text-brand-primary transition-colors uppercase">
                         {project.title}
-                      </h3>
+                      </h2>
                       <p className="font-mono text-[11px] text-brand-muted uppercase mt-0.5 tracking-wider">
                         {project.category}
                       </p>

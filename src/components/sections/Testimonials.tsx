@@ -2,7 +2,7 @@ import React from "react";
 import { testimonials } from "../../data/agencyData";
 import { TiltCard } from "../motion/TiltCard";
 import { VelocitySkewText } from "../motion/VelocitySkewText";
-import { Quote } from "lucide-react";
+import Quote from "../ui/svgs/Quote";
 
 export const Testimonials: React.FC = () => {
   return (

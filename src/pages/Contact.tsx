@@ -6,7 +6,14 @@ import * as z from "zod";
 import { PageHero } from "../components/ui/PageHero";
 import { Footer } from "../components/layout/Footer";
 import { MagneticButton } from "../components/motion/MagneticButton";
-import { ArrowUpRight, Check, CheckCircle2, Mail, MapPin, Send, MessageSquare } from "lucide-react";
+import ArrowUpRight from "../components/ui/svgs/ArrowUpRight";
+import Check from "../components/ui/svgs/Check";
+import CheckCircle2 from "../components/ui/svgs/CheckCircle2";
+import Mail from "../components/ui/svgs/Mail";
+import MapPin from "../components/ui/svgs/MapPin";
+import Send from "../components/ui/svgs/Send";
+import MessageSquare from "../components/ui/svgs/MessageSquare";
+import SEO from "../components/seo/SEO";
 
 // Strict Zod Form Schema validation
 const contactSchema = z.object({
@@ -58,6 +65,11 @@ export const Contact: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="relative w-full"
     >
+      <SEO
+        title="Start a Project // AURA Studio"
+        description="Get in touch with AURA Studio. Let's build immersive digital platforms, high-performance web solutions, and premium brand identities together."
+        path="/contact"
+      />
       {/* Page Hero */}
       <PageHero
         category="GET_IN_TOUCH"
@@ -95,8 +107,8 @@ export const Contact: React.FC = () => {
                   <span className="block font-mono text-[9px] tracking-wider text-brand-muted/40 uppercase">
                     GENERAL_ENQUIRIES
                   </span>
-                  <a href="mailto:hello@aurastudio.com" className="font-display text-lg font-bold text-brand-text hover:text-brand-primary transition-colors">
-                    hello@aurastudio.com
+                  <a href="mailto:hello@aura-studio.com" className="font-display text-lg font-bold text-brand-text hover:text-brand-primary transition-colors">
+                    hello@aura-studio.com
                   </a>
                 </div>
               </div>

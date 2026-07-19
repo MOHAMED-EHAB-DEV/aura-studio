@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MagneticButton } from "../motion/MagneticButton";
-import { ArrowRight } from "lucide-react";
+import ArrowRight from "../ui/svgs/ArrowRight";
 
 export const CTABanner: React.FC = () => {
   return (

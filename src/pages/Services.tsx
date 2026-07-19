@@ -3,9 +3,13 @@ import { motion, AnimatePresence } from "motion/react";
 import { services } from "../data/agencyData";
 import { PageHero } from "../components/ui/PageHero";
 import { Footer } from "../components/layout/Footer";
-import { Plus, Minus, CheckCircle, ArrowRight } from "lucide-react";
+import Plus from "../components/ui/svgs/Plus";
+import Minus from "../components/ui/svgs/Minus";
+import CheckCircle from "../components/ui/svgs/CheckCircle";
+import ArrowRight from "../components/ui/svgs/ArrowRight";
 import { MagneticButton } from "../components/motion/MagneticButton";
 import { Link } from "react-router-dom";
+import SEO from "../components/seo/SEO";
 
 export const Services: React.FC = () => {
   const [expandedId, setExpandedId] = useState<string | null>("strategy");
@@ -22,6 +26,11 @@ export const Services: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="relative w-full"
     >
+      <SEO
+        title="Our Services // AURA Studio"
+        description="From immersive 3D WebGL experiences to high-performance web systems and digital branding, discover AURA Studio's technical capabilities."
+        path="/services"
+      />
       {/* Page Hero */}
       <PageHero
         category="CAPABILITIES"
@@ -46,20 +55,20 @@ export const Services: React.FC = () => {
                   key={service.id}
                   className="border-b border-brand-border/30 transition-colors"
                 >
-                  {/* Accordion Trigger Header */}
                   <button
                     onClick={() => toggleExpand(service.id)}
                     className="flex w-full items-center justify-between py-8 text-left focus:outline-none group"
                     aria-expanded={isExpanded}
                     aria-controls={`service-panel-${service.id}`}
+                    aria-label={`Toggle details for ${service.title}`}
                   >
                     <div className="flex items-center space-x-6 md:space-x-12">
                       <span className="font-mono text-sm text-brand-muted/40 group-hover:text-brand-primary transition-colors">
                         /0{index + 1}
                       </span>
-                      <h3 className="font-display text-2xl md:text-4xl font-black tracking-tight text-brand-text group-hover:text-brand-primary transition-colors uppercase">
+                      <h2 className="font-display text-2xl md:text-4xl font-black tracking-tight text-brand-text group-hover:text-brand-primary transition-colors uppercase">
                         {service.title}
-                      </h3>
+                      </h2>
                     </div>
 
                     <div className="flex h-12 w-12 items-center justify-center rounded-full border border-brand-border bg-brand-surface text-brand-text group-hover:border-brand-primary group-hover:text-brand-primary transition-all duration-300">
@@ -131,9 +140,9 @@ export const Services: React.FC = () => {
 
       {/* Accordion secondary conversion prompt */}
       <section className="bg-brand-bg py-16 px-6 relative overflow-hidden text-center flex flex-col items-center">
-        <h4 className="font-display text-xl md:text-2xl font-bold text-brand-text mb-2 uppercase">
+        <h2 className="font-display text-xl md:text-2xl font-bold text-brand-text mb-2 uppercase">
           Require a tailored capability consultation?
-        </h4>
+        </h2>
         <p className="text-xs text-brand-muted max-w-md font-sans mb-6">
           We construct specialized development sprint groups for premium entities. Tell us what you are modeling.
         </p>
