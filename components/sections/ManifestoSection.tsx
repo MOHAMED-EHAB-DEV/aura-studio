@@ -38,10 +38,10 @@ export const ManifestoSection: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-[85vh] w-full flex-col justify-center bg-brand-bg px-6 py-24 md:px-12 md:py-36 overflow-hidden"
+      className="relative flex min-h-[85vh] w-full flex-col justify-center bg-brand-bg px-4 py-16 sm:px-6 sm:py-24 md:px-12 md:py-36 overflow-hidden"
     >
       {/* Editorial Watermark */}
-      <div className="absolute right-6 top-12 font-mono text-[10px] tracking-widest text-brand-muted/65 select-none">
+      <div className="absolute right-4 sm:right-6 top-8 sm:top-12 font-mono text-[8px] sm:text-[10px] tracking-widest text-brand-muted/65 select-none">
         AURA_MANIFESTO_V3.9
       </div>
 
@@ -49,7 +49,7 @@ export const ManifestoSection: React.FC = () => {
         {/* Scroll Skew Header */}
         <div className="mb-12 overflow-hidden">
           <VelocitySkewText>
-            <h2 className="font-display text-4xl font-extrabold tracking-tight text-brand-primary md:text-6xl uppercase">
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-primary md:text-6xl uppercase">
               OUR_MANIFESTO
             </h2>
           </VelocitySkewText>
@@ -59,7 +59,7 @@ export const ManifestoSection: React.FC = () => {
         <div className="relative">
           <p
             ref={paragraphRef}
-            className="font-display text-3xl font-bold leading-tight md:text-5xl lg:text-6xl text-brand-text flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]"
+            className="font-display text-2xl sm:text-3xl font-bold leading-tight md:text-5xl lg:text-6xl text-brand-text flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]"
           >
             {words.map((word, index) => (
               <span
@@ -73,7 +73,7 @@ export const ManifestoSection: React.FC = () => {
         </div>
 
         {/* Bottom indicators */}
-        <div className="mt-16 flex flex-col sm:flex-row justify-between items-start sm:items-center border-t border-brand-border/20 pt-8 font-mono text-xs text-brand-muted/75 gap-4">
+        <div className="mt-12 sm:mt-16 flex flex-col sm:flex-row justify-between items-start sm:items-center border-t border-brand-border/20 pt-6 sm:pt-8 font-mono text-[10px] sm:text-xs text-brand-muted/75 gap-4">
           <span>// PERSISTENCE_OF_VISION</span>
           <span>AURA STUDIO — © MOHAMED EHAB</span>
         </div>

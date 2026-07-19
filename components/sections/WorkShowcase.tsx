@@ -109,6 +109,7 @@ export const WorkShowcase: React.FC = () => {
                   src={project.image}
                   alt={project.title}
                   className="h-full w-full object-cover"
+                  priority={index <= 1}
                 />
                 
                 {/* Micro-Interaction Project Year tag */}

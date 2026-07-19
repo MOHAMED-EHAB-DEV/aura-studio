@@ -9,9 +9,10 @@ interface DistortionImageProps {
   src: string;
   alt: string;
   className?: string;
+  priority?: boolean;
 }
 
-export const DistortionImage: React.FC<DistortionImageProps> = ({ src, alt, className = "" }) => {
+export const DistortionImage: React.FC<DistortionImageProps> = ({ src, alt, className = "", priority = false }) => {
   const shouldReduceMotion = useReducedMotion();
   const [isHovered, setIsHovered] = useState(false);
   const [hoverCoords, setHoverCoords] = useState<[number, number]>([0.5, 0.5]);
@@ -60,6 +61,7 @@ export const DistortionImage: React.FC<DistortionImageProps> = ({ src, alt, clas
       fill
       sizes="(max-width: 768px) 100vw, 50vw"
       className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+      priority={priority}
     />
   );
 

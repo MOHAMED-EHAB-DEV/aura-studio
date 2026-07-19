@@ -13,7 +13,7 @@ export const HeroSection: React.FC = () => {
 
   return (
     <>
-      <section className="relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-brand-bg px-6 pb-12 pt-32 md:px-12 md:pb-16 md:pt-40">
+      <section className="relative flex min-h-svh w-full flex-col justify-between overflow-hidden bg-brand-bg px-4 pb-8 pt-24 sm:px-6 sm:pb-12 sm:pt-32 md:px-12 md:pb-16 md:pt-40">
         {/* Background WebGL Liquid Shader */}
         <Suspense fallback={<div className="absolute inset-0 z-0 h-full w-full bg-brand-bg opacity-30" />}>
           <LiquidShaderCanvas />
@@ -27,7 +27,7 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Top/Intro Text */}
-        <div className="relative z-20 flex w-full flex-col md:flex-row justify-between items-start md:items-center text-xs font-mono tracking-widest text-brand-muted gap-4">
+        <div className="relative z-20 flex w-full flex-col md:flex-row justify-between items-start md:items-center text-[10px] sm:text-xs font-mono tracking-widest text-brand-muted gap-3 sm:gap-4">
           <div className="flex items-center space-x-2">
             <span className="h-1.5 w-1.5 rounded-full bg-brand-primary animate-ping" />
             <span>AURA_STUDIO // NEW YORK - LONDON</span>
@@ -39,7 +39,7 @@ export const HeroSection: React.FC = () => {
 
         {/* Massive Typography Content */}
         <div className="relative z-20 my-auto flex max-w-5xl flex-col text-left">
-          <h1 className="font-display text-[11vw] md:text-[8vw] font-extrabold leading-[0.9] tracking-tighter text-brand-text select-none">
+          <h1 className="font-display text-[13vw] sm:text-[11vw] md:text-[8vw] font-extrabold leading-[0.9] tracking-tighter text-brand-text select-none">
             <SplitText text="WE SHAPE" className="block text-brand-primary" />
             <SplitText text="DIGITAL" className="block text-brand-text" delay={0.2} />
             <SplitText text="REALITIES." className="block stroke-text text-brand-text" delay={0.4} />
@@ -47,17 +47,17 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Bottom Panel controls / Scroll Indicator */}
-        <div className="relative z-20 flex flex-col sm:flex-row w-full items-start sm:items-center justify-between gap-6">
+        <div className="relative z-20 flex flex-col sm:flex-row w-full items-start sm:items-center justify-between gap-8 sm:gap-6 mt-8 sm:mt-0">
           <div className="flex flex-col text-left max-w-sm">
-            <p className="font-mono text-xs text-brand-primary tracking-widest uppercase mb-1 font-semibold">
+            <p className="font-mono text-[10px] sm:text-xs text-brand-primary tracking-widest uppercase mb-1 font-semibold">
               // DESIGN FOR THE FUTURE
             </p>
-            <p className="text-sm text-brand-muted leading-relaxed">
+            <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
               We engineer immersive, hyper-designed web properties for venture-backed startups and premium corporate entities.
             </p>
           </div>
 
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-6 sm:space-x-8 w-full sm:w-auto">
             {/* Scroll indicator */}
             <div className="hidden md:flex flex-col items-start font-mono text-[10px] tracking-widest text-brand-muted/80">
               <span>SCROLL_TO_DISCOVER</span>
@@ -73,7 +73,7 @@ export const HeroSection: React.FC = () => {
             {/* CTA button */}
             <MagneticButton
               onClick={() => setShowReel(true)}
-              className="group flex items-center space-x-3 rounded-full border border-brand-primary bg-brand-primary/10 px-8 py-4 font-mono text-xs font-bold tracking-widest text-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 shadow-lg shadow-brand-primary/10"
+              className="group flex w-full sm:w-auto items-center justify-center space-x-3 rounded-full border border-brand-primary bg-brand-primary/10 px-6 py-3 sm:px-8 sm:py-4 font-mono text-[10px] sm:text-xs font-bold tracking-widest text-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 shadow-lg shadow-brand-primary/10"
               id="view-reel-btn"
             >
               <Play size={14} className="fill-current transition-transform group-hover:scale-110" />
