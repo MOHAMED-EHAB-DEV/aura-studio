@@ -74,6 +74,9 @@ export const metadata: Metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
+  alternates: {
+    canonical: "./",
+  },
   robots: {
     index: true,
     follow: true,
@@ -87,9 +90,28 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "AURA Studio",
+  url: "https://aura-studio-beige.vercel.app",
+  logo: "https://aura-studio-beige.vercel.app/og-image.jpg",
+  description: "AURA Studio is a premium creative agency designing award-winning digital experiences.",
+  sameAs: [
+    "https://twitter.com/__M__O__H__",
+    "https://github.com/Mohamed-Ehab"
+  ]
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`dark ${manrope.variable} ${syne.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <AudioProvider>
           <LenisProvider>
@@ -99,7 +121,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </a>
             
             {/* Decorative grid overlay */}
-            <div className="pointer-events-none fixed inset-0 z-0 mx-auto grid max-w-7xl grid-cols-4 opacity-[0.03]">
+            <div className="pointer-events-none fixed inset-0 z-0 mx-auto grid max-w-7xl grid-cols-4 opacity-[0.03]" aria-hidden="true">
               <div className="border-x border-brand-text" />
               <div className="border-r border-brand-text" />
               <div className="border-r border-brand-text" />

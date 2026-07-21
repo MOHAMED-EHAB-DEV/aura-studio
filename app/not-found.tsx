@@ -1,17 +1,22 @@
 "use client";
 
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 import ArrowRight from "@/components/ui/svgs/ArrowRight";
 
 export default function NotFound() {
+  useEffect(() => {
+    document.title = "404 Page Not Found | AURA Studio";
+  }, []);
+
   return (
     <div className="relative min-h-screen w-full flex flex-col items-center justify-center bg-brand-bg px-6 py-12 text-brand-text overflow-hidden select-none">
       {/* Ambient background glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-brand-primary/10 rounded-full blur-[140px] opacity-70" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-brand-primary/10 rounded-full blur-[140px] opacity-70" aria-hidden="true" />
 
       {/* Decorative grid overlay */}
-      <div className="pointer-events-none absolute inset-0 z-0 mx-auto grid max-w-7xl grid-cols-4 opacity-[0.04]">
+      <div className="pointer-events-none absolute inset-0 z-0 mx-auto grid max-w-7xl grid-cols-4 opacity-[0.04]" aria-hidden="true">
         <div className="border-x border-brand-text" />
         <div className="border-r border-brand-text" />
         <div className="border-r border-brand-text" />

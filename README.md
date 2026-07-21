@@ -1,15 +1,26 @@
 # AURA Studio // Premium Creative Digital Agency Template
 
-[![Preview Website](https://img.shields.io/badge/Preview-AURA%20Studio-orange?style=for-the-badge)](https://aura-studio-beige.vercel.app)
-
 ## ✨ Overview
-AURA Studio is a state-of-the-art creative agency template designed for digital studios, freelancers, and premium portfolios. It delivers an unforgettable interactive experience combining WebGL graphics, tactile sound design, and ultra-smooth animations. This template is fully optimized for speed, SEO, and professional client delivery, providing a polished and commercially viable product out of the box.
+AURA Studio is a state-of-the-art creative agency and portfolio template designed for digital studios, production houses, design agencies, and ambitious freelancers. Built with a dark luxury aesthetic, rich atmospheric lighting, tactile audio feedback, and fluid interactive animations, AURA Studio creates a memorable brand presence that engages visitors from the very first glance.
 
 ## 🌟 What Makes It Unique
 - **Tactile Audio Feedback Engine**: Implements immersive, tactile click and scroll audio ticks that add a physical quality to the digital layout.
-- **GSAP Horizontal Scroll Showcase**: A custom-pinned case study section that transitions horizontally with high performance.
-- **WebGL Distortion Effects**: Implements responsive distortion shaders on images that dynamically respond to hover coordinates.
-- **Liquid Shader Canvas**: Dynamic interactive background utilizing custom Three.js shaders.
+- **GSAP Horizontal Scroll Showcase**: A custom-pinned case study section that transitions horizontally with high performance.  
+- **Hardware-Accelerated CSS Mesh Aura**: Ambient background gradient matching dark luxury aesthetics with 0% CPU/GPU rendering overhead.
+- **Interactive Cursor Experience**: Fluid custom cursor that reacts dynamically to interactive links, buttons, and media cards across desktop screens.
+- **Dedicated 404 Void Page**: A unique, custom-designed page for missing links that keeps the experience consistent without distraction.
+- **Ultra-Fast & Responsive**: Optimized for smooth performance, instant page loads, and flawless display on mobile, tablet, and desktop devices.
+
+## 🚀 Key Features
+- **Tactile Audio Feedback Engine**: Integrated audio ticks for click & scroll interactions with audio mute controls.
+- **GSAP ScrollTrigger Motion Systems**: Custom horizontal showcase, magnetic button physics, tilt perspective cards, and scroll progress tracking.
+- **Hardware-Accelerated CSS Mesh Background**: Multi-layer atmospheric ambient gradient with cursor proximity light field (0% CPU/GPU overhead).
+- **Responsive Navigation Suite**: Fixed header with volume toggle, full-screen video overlay menu, and accessible mobile controls.
+- **High-Performance Custom Cursor**: Desktop custom cursor with interactive element scaling and global `<select>`/`input` encapsulation.
+- **SEO & Search Engine Optimization**: Built-in JSON-LD organization schema, automated dynamic sitemap generation, robots.txt, and complete OpenGraph/Twitter card metadata.
+- **Isolated Custom 404 Void Page**: Dedicated digital reality void page separated from standard headers/footers via Next.js route groups (`(website)`).
+- **Accessibility & Focus Controls**: Global focus-visible rings, keyboard focus trapping, body scroll locking for dialogs, and reduced-motion fallback compliance.
+- **Centralized Data Engine**: Easily update all projects, copy, services, metrics, and office locations from a single `data/agencyData.ts` configuration file.
 
 ## 🎯 Perfect For
 - Creative Agencies & Production Studios
@@ -17,32 +28,15 @@ AURA Studio is a state-of-the-art creative agency template designed for digital 
 - Premium Brands & High-End Portfolios
 - Designers aiming to make a bold first impression
 
-## 🛠 Tech Stack
-| Technology | Description |
-|---|---|
-| **Next.js (App Router)** | React Server Components, fast local development, and build optimization |
-| **TypeScript** | Strict compile-time type safety |
-| **Tailwind CSS (v4)** | Natively fast, custom CSS-variable powered design tokens |
-| **GSAP** | Advanced ScrollTrigger timeline mapping and smooth interactions |
-| **Three.js & Fiber** | WebGL graphics & custom interactive image shaders |
-| **Lenis** | Physics-based smooth-scroll synchronization |
-
 ## 📄 Pages Included
 | Page | Route | Description |
 |---|---|---|
-| **Home** | `/` | Immersive home featuring split headers, threejs distortion grid, horizontal showcase, and client logos |
+| **Home** | `/` | Immersive home featuring split headers, ambient aura mesh, horizontal showcase, and client logos |
 | **Work** | `/work` | Categorized project grid with magnetic layouts and rich interactive cards |
 | **Services** | `/services` | Detailed studio capabilities, pricing tier lists, and strategic approach stages |
 | **About** | `/about` | Leadership team showcases, agency values, and philosophy blocks |
 | **Contact** | `/contact` | Full contact sheet with location grids, local coordinates, and custom inquiry fields |
-
-## 🧩 Sections & Components
-- **Navbar**: High-performance header with volume toggles, magnetic navigation, and interactive logo
-- **FullScreenMenu**: Fullscreen overlay with auto-playing video-backing streams reflecting active hover states
-- **SpotlightCard**: Dynamic mouse-responsive radial glow overlay container
-- **TiltCard**: Mousemove perspective 3D rotation component
-- **MagneticButton**: Magnetized mouse magnet attraction CTA trigger
-- **Footer**: Editorial layout featuring global office details and social anchors
+| **404 Void** | `/not-found` | Isolated digital reality not found page stripped of global Navbar/Footer |
 
 ## 🎨 Design System
 | Font Family | Variable | Weights | Used For |
@@ -50,39 +44,45 @@ AURA Studio is a state-of-the-art creative agency template designed for digital 
 | **Syne** | `--font-display` | 100-800 (Bold/Black) | Headings, display text |
 | **Manrope** | `--font-body` | 100-800 (Light, Regular, Medium, Semibold, Bold) | Body text, UI, mono details |
 
-## 📁 Folder Structure
+---
+
+## 📁 Project File Structure
 ```
-src/
-  app/               ← Next.js pages, layouts, robots, sitemap, globals.css
-  components/
-    ui/              ← CustomCursor, PageHero, Button, Badge, Card, Input, Select, Drawer, Modal, Skeleton
-    motion/          ← SpotlightCard, TiltCard, MagneticButton, SplitText, VelocitySkewText
-    layout/          ← Navbar, Footer, PageWrapper
-    sections/        ← Hero, ServicesGrid, WorkShowcase, AboutGrid, ContactForm, etc.
-  hooks/             ← useFocusTrap, useScrollLock, useEscapeKey, useSpotlight, useTilt, useMagnetic, useCountUp, useScrollProgress, useMousePosition
-  lib/               ← utils.ts (cn helper), constants.ts, gsap.ts
-  data/              ← agencyData.ts
-  styles/
-    globals.css
-  types/
-    index.ts
+app/                 ← Next.js App Router root layout, fonts, robots, sitemap
+  (website)/         ← Route group for main site pages & website Navbar layout
+  not-found.tsx      ← Standalone custom 404 page (no Navbar/Footer)
+components/          ← UI, Motion, Layout, Sections, Three
+data/                ← Centralized project & agency data (agencyData.ts)
+hooks/               ← Focus trapping, scroll locking, magnetic, tilt, count-up hooks
+lib/                 ← Class merger utilities, GSAP registration
+styles/              ← Tailwind v4 CSS variables & design tokens (globals.css)
+types/               ← Type definitions
 ```
 
-## 🚀 Getting Started
+## 🛠 Tech Stack
+| Technology | Description |
+|---|---|
+| **Next.js (App Router)** | React Server Components, Route Groups (`(website)`), fast local development, and build optimization |
+| **TypeScript** | Strict compile-time type safety with root `@/*` import alias |
+| **Tailwind CSS (v4)** | Natively fast, custom CSS-variable powered design tokens |
+| **GSAP** | Advanced ScrollTrigger timeline mapping and smooth interactions |
+| **Lenis** | Physics-based smooth-scroll synchronization |
+
+## 🚀 Setup & Installation Guide
 
 ### Prerequisites
-- Node.js
+- Node.js (v18+)
 - Bun (recommended) or npm
 
 ### Installation
-1. Clone the project files to your directory.
-2. Install dependencies:
+1. Clone or extract the project files to your directory.
+2. Install project dependencies:
    ```bash
    bun install
    ```
 
-### Setup Environment
-Rename `.env.example` to `.env.local` and add relevant environment variables:
+### Environment Configuration
+Rename `.env.example` to `.env.local`:
 ```bash
 cp .env.example .env.local
 ```
@@ -92,30 +92,33 @@ Launch the high-performance local server:
 ```bash
 bun dev
 ```
-Open `http://localhost:3000` to inspect.
+Open `http://localhost:3000` in your browser.
 
-## ⚙️ Customization Guide
-- **Colors & Styling**: Open `src/styles/globals.css` to update the global light/dark CSS tokens inside the `@theme` and `:root` block.
-- **Copy & Navigation**: Update text and data arrays inside `src/data/agencyData.ts` to update the UI content.
-- **Custom Shaders**: Edit the fragment and vertex shaders in `src/components/three/` to alter the distortion patterns.
+### Build for Production
+Create an optimized production bundle:
+```bash
+bun run build
+```
 
-## 🔌 API Reference
-> [!NOTE]
-> **Not Applicable** — Aura Studio is a high-performance frontend-only template and does not ship with built-in API endpoints.
+## ⚙️ Configuration Notes
+- **Colors & Design Tokens**: Edit `styles/globals.css` to customize the primary brand colors, background values, and fonts.
+- **Copy & Portfolio Data**: All site copy, project items, services, team members, and metrics are centralized in `data/agencyData.ts`.
+- **Path Aliases**: Path alias `@/*` maps directly to `./*` as configured in `tsconfig.json`.
+- **Deployment Config**: Pre-configured `vercel.json` provides instant build & routing settings for Vercel deployment.
 
-## 🌐 Deployment
-This template is fully pre-configured for instant deployment on **Vercel**:
-1. Connect your repository to Vercel.
-2. The `vercel.json` file will automatically define build configurations (`npm run build`) and directory defaults (`.next`).
+## 🌐 Deployment Guide
+1. Import your repository into **Vercel** or **Netlify**.
+2. Set the build command to `bun run build` (or `npm run build`).
+3. Add `NEXT_PUBLIC_SITE_URL` to environment variables in your deployment dashboard.
 
-## 📦 What's Included
-- Complete design system with CSS custom properties
-- Advanced physics-based custom cursor
-- Full custom layout suite (Navbar, Footer, Menu)
-- Strict TypeScript compile settings
-- Pre-configured Vercel deployment block
+## 📦 Package Contents
+- Complete Next.js project with App Router route groups
+- Fully responsive dark mode design system
+- Tactile audio feedback system with audio assets
+- Pre-configured deployment files (`vercel.json`, `robots.txt`, `sitemap.ts`)
+- Built-in accessibility hooks and focus controls
 
-## 📋 Browser Support
+## 📋 Browser Compatibility
 | Chrome | Safari | Firefox | Edge | Opera |
 |---|---|---|---|---|
 | Chrome 90+ | Safari 14+ | Firefox 88+ | Edge 90+ | Opera 76+ |
@@ -127,40 +130,40 @@ This template is provided under a Single-Use Commercial License.
 
 ## 🆘 Need Help?
 
-Need a hand getting this template running or customized? Check the FAQs below, or reach out through our support page:
+Need assistance setting up or customizing your template? Reach out through our support portal:
 
 👉 **[mhd-store.vercel.app/support](https://mhd-store.vercel.app/support)**
 
-**FAQs**
+**Frequently Asked Questions**
 
 <details>
 <summary>How do I customize the audio files used for the tactile feedback?</summary>
 
-You can replace the audio tick files located in the `public/audio/` directory. Keep the same filenames (`tick.mp3`, `click.mp3`, etc.) to automatically apply them, or update the paths in `src/context/AudioContext.tsx`.
+You can replace the audio tick files located in the `public/audio/` directory. Keep the same filenames (`tick.mp3`, `click.mp3`) to automatically apply them, or update the paths in `context/AudioContext.tsx`.
 </details>
 
 <details>
 <summary>How does the GSAP horizontal scroll work, and how can I adjust scroll speed?</summary>
 
-The horizontal scroll is powered by GSAP's `ScrollTrigger` in `src/components/sections/WorkShowcase.tsx`. You can adjust the `scrub` value or the end boundary parameter (`end: "+=2000"`) in the ScrollTrigger settings to speed up or slow down the horizontal movement.
+The horizontal scroll is powered by GSAP's `ScrollTrigger` in `components/sections/WorkShowcase.tsx`. You can adjust the `scrub` value or the end boundary parameter (`end: "+=2000"`) in the ScrollTrigger settings to speed up or slow down the movement.
 </details>
 
 <details>
 <summary>How can I update the text and projects displayed in the grid?</summary>
 
-All copy, project data, metrics, and socials are centralized in `src/data/agencyData.ts`. Simply modify the export arrays in that file to automatically propagate changes to the layout.
+All copy, project data, metrics, and socials are centralized in `data/agencyData.ts`. Simply modify the export arrays in that file to automatically propagate changes across all pages.
 </details>
 
 <details>
 <summary>How do I deploy this template on Vercel?</summary>
 
-Import the repository directly into Vercel. Vercel will auto-detect Next.js and apply the settings in `vercel.json`. Make sure to add `NEXT_PUBLIC_SITE_URL` to Vercel environment variables.
+Import the repository directly into Vercel. Vercel will auto-detect Next.js and apply the settings in `vercel.json`. Make sure to add `NEXT_PUBLIC_SITE_URL` to your Vercel environment variables.
 </details>
 
 <details>
 <summary>Can I disable the custom cursor for mobile devices?</summary>
 
-The custom cursor in `src/components/ui/CustomCursor.tsx` is automatically disabled on mobile and touch devices using a CSS media query `(min-width: 1024px) and (pointer: fine)`.
+The custom cursor in `components/ui/CustomCursor.tsx` is automatically disabled on mobile and touch devices using a CSS media query `(min-width: 1024px) and (pointer: fine)`.
 </details>
 
 ## 👤 Credits
