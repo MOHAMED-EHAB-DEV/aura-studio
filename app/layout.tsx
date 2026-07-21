@@ -1,25 +1,24 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import "@/styles/globals.css";
 
 const manrope = localFont({
-  src: "../public/fonts/subset-Manrope-VariableFont_wght.woff2",
+  src: "./fonts/subset-Manrope-VariableFont_wght.woff2",
   variable: "--font-manrope",
   weight: "100 800",
   display: "swap",
 });
 
 const syne = localFont({
-  src: "../public/fonts/subset-Syne-VariableFont_wght.woff2",
+  src: "./fonts/subset-Syne-VariableFont_wght.woff2",
   variable: "--font-syne",
   weight: "100 800",
   display: "swap",
 });
+
 import { AudioProvider } from "@/context/AudioContext";
 import { LenisProvider } from "@/components/providers/LenisProvider";
-import { Navbar } from "@/components/layout/Navbar";
 import { CustomCursor } from "@/components/ui/CustomCursor";
-import { PageTransitionProvider } from "@/components/providers/PageTransitionProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -90,7 +89,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`dark ${manrope.variable} ${syne.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`dark ${manrope.variable} ${syne.variable}`}>
       <body>
         <AudioProvider>
           <LenisProvider>
@@ -106,14 +105,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="border-r border-brand-text" />
             </div>
             
-            <Navbar />
             <CustomCursor />
-            
-            <main id="main-content" className="relative z-10">
-              <PageTransitionProvider>
-                {children}
-              </PageTransitionProvider>
-            </main>
+            {children}
           </LenisProvider>
         </AudioProvider>
       </body>

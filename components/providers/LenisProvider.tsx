@@ -1,15 +1,15 @@
 "use client";
 import { useEffect } from "react";
 import Lenis from "lenis";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { ScrollTrigger } from "@/lib/gsap";
 
 export function LenisProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    document.documentElement.classList.add("custom-cursor-active", "dark");
+    document.documentElement.classList.add("dark");
     
     const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
@@ -21,15 +21,15 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
       ScrollTrigger.update();
     });
 
-    const tickCallback = (time: number) => {
-      lenis.raf(time * 1000);
-    };
-
-    gsap.ticker.add(tickCallback);
-    gsap.ticker.lagSmoothing(0);
+    let rafId: number;
+    function update(time: number) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(update);
+    }
+    rafId = requestAnimationFrame(update);
 
     return () => {
-      gsap.ticker.remove(tickCallback);
+      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);

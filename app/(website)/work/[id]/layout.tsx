@@ -1,14 +1,6 @@
 import { Metadata } from "next";
 import { projects } from "@/data/agencyData";
 
-export const revalidate = 60 * 60 * 24 * 30;
-
-// 1. Generate static paths for SSG / ISR
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    id: project.id,
-  }));
-}
 
 // 2. Dynamic Metadata generation for each project
 export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {

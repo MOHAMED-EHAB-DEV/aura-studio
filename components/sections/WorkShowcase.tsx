@@ -39,6 +39,10 @@ export const WorkShowcase: React.FC = () => {
         scrub: 0.8,
         start: "top top",
         end: `+=${amountToScroll}`,
+        onEnter: () => gsap.to("header", { autoAlpha: 0, duration: 0.3 }),
+        onLeave: () => gsap.to("header", { autoAlpha: 1, duration: 0.3 }),
+        onEnterBack: () => gsap.to("header", { autoAlpha: 0, duration: 0.3 }),
+        onLeaveBack: () => gsap.to("header", { autoAlpha: 1, duration: 0.3 }),
         animation: gsap.to(scrollEl, {
           x: -amountToScroll,
           ease: "none"
@@ -62,6 +66,28 @@ export const WorkShowcase: React.FC = () => {
 
       return () => {
         trigger.kill();
+        // Ensure header is visible if component unmounts while hidden
+        gsap.set("header", { autoAlpha: 1 });
+      };
+    });
+
+    mm.add("(max-width: 767px)", () => {
+      const containerEl = containerRef.current;
+      if (!containerEl) return;
+
+      const trigger = ScrollTrigger.create({
+        trigger: containerEl,
+        start: "top top",
+        end: "bottom top",
+        onEnter: () => gsap.to("header", { autoAlpha: 0, duration: 0.3 }),
+        onLeave: () => gsap.to("header", { autoAlpha: 1, duration: 0.3 }),
+        onEnterBack: () => gsap.to("header", { autoAlpha: 0, duration: 0.3 }),
+        onLeaveBack: () => gsap.to("header", { autoAlpha: 1, duration: 0.3 }),
+      });
+
+      return () => {
+        trigger.kill();
+        gsap.set("header", { autoAlpha: 1 });
       };
     });
   }, { scope: containerRef });

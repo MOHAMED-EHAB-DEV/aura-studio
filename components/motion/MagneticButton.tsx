@@ -1,8 +1,9 @@
 "use client";
-import React, { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring } from "motion/react";
+import React, { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
-interface MagneticButtonProps extends Omit<React.ComponentPropsWithoutRef<typeof motion.button>, "style"> {
+interface MagneticButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className?: string;
   id?: string;
@@ -18,73 +19,69 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
   disabled = false,
   ...props
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [hovered, setHovered] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  // Set up motion values and spring transitions
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+  useGSAP(() => {
+    if (!buttonRef.current || !containerRef.current) return;
 
-  const springConfig = { damping: 15, stiffness: 150, mass: 0.6 };
-  const springX = useSpring(x, springConfig);
-  const springY = useSpring(y, springConfig);
+    const xTo = gsap.quickTo(buttonRef.current, "x", { duration: 0.3, ease: "power3.out" });
+    const yTo = gsap.quickTo(buttonRef.current, "y", { duration: 0.3, ease: "power3.out" });
 
-  const rectRef = useRef<DOMRect | null>(null);
+    const handleMouseMove = (e: MouseEvent) => {
+      const container = containerRef.current;
+      if (!container) return;
 
-  const handleMouseEnter = () => {
-    setHovered(true);
-    if (ref.current) {
-      rectRef.current = ref.current.getBoundingClientRect();
-    }
-  };
+      const rect = container.getBoundingClientRect();
+      const { left, top, width, height } = rect;
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!ref.current) return;
-    const { clientX, clientY } = e;
-    const rect = rectRef.current || ref.current.getBoundingClientRect();
-    if (!rectRef.current) rectRef.current = rect;
-    
-    const { left, top, width, height } = rect;
-    
-    // Calculate distance from center of the button
-    const centerX = left + width / 2;
-    const centerY = top + height / 2;
-    
-    // Max movement threshold (e.g. 25px)
-    const distanceX = clientX - centerX;
-    const distanceY = clientY - centerY;
-    
-    // Set offset with a soft scaling
-    x.set(distanceX * 0.35);
-    y.set(distanceY * 0.35);
-  };
+      const centerX = left + width / 2;
+      const centerY = top + height / 2;
 
-  const handleMouseLeave = () => {
-    setHovered(false);
-    rectRef.current = null;
-    x.set(0);
-    y.set(0);
-  };
+      const distanceX = e.clientX - centerX;
+      const distanceY = e.clientY - centerY;
+
+      // Check if mouse is within 80px radius of center
+      const radius = 80;
+      const distance = Math.hypot(distanceX, distanceY);
+
+      if (distance < radius) {
+        xTo(distanceX * 0.35);
+        yTo(distanceY * 0.35);
+      } else {
+        xTo(0);
+        yTo(0);
+      }
+    };
+
+    const handleMouseLeave = () => {
+      xTo(0);
+      yTo(0);
+    };
+
+    const currentContainer = containerRef.current;
+    currentContainer.addEventListener("mousemove", handleMouseMove);
+    currentContainer.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      currentContainer.removeEventListener("mousemove", handleMouseMove);
+      currentContainer.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, { scope: containerRef });
 
   return (
-    <div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="magnetic-wrap inline-block"
-    >
-      <motion.button
+    <div ref={containerRef} className="magnetic-wrap inline-block">
+      <button
+        ref={buttonRef}
         id={id}
         onClick={onClick}
         disabled={disabled}
-        style={{ x: springX, y: springY }}
         className={className}
-        whileTap={{ scale: 0.96 }}
+        style={{ willChange: "transform" }}
         {...props}
       >
         {children}
-      </motion.button>
+      </button>
     </div>
   );
 };
